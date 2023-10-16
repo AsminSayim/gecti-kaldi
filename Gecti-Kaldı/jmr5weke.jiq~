@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Gecti_Kaldı
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnHesapla_Click(object sender, EventArgs e)
+        {
+            float yazili1, yazili2, ortalma;
+
+            string durum;
+
+            yazili1 = Convert.ToSingle(txtYazili1.Text);
+            yazili2 = Convert.ToSingle(txtYazili2.Text);
+
+            ortalma = (yazili1 + yazili2) / 2;
+
+            if (ortalma >= 50)
+            {
+                durum = "Geçti";
+                lblDurum.ForeColor = Color.Green;
+            }
+
+            else
+            {
+                durum = "Kaldı";
+            }
+
+            lblOrtalama.Text = "Ortalama" + ortalma;
+            lblDurum.Text = durum;
+            
+        }
+    }
+}
